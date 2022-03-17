@@ -1,0 +1,5 @@
+# This is our .gitignore file so we don't push files that we dont want on the
+# the repository. This will include pycharm stuff, and perhaps a few .csv files
+
+# Ignore the .idea folder
+.idea/
