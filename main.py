@@ -1,14 +1,7 @@
-for x in range(10):
-    print("ype this works")
+# Here is the start of my python file
 
+x, y = 8, 33
 
-print("here is some text that I want to print")
+for letter in range(10):
+    print(x + y)
 
-x = 8
-y = 2
-
-def trythisout(x: int, y:int):
-    out = x ** y
-    print(out)
-
-trythisout(x, y)
