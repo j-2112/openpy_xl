@@ -3,7 +3,3 @@
 
 # Ignore the .idea folder
 .idea/
-
-# We want to ignore the Excel files as well! (perhaps) This will mess things up if working from home
-.xlsx
-
