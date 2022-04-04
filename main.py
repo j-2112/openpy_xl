@@ -1,17 +1,31 @@
-"""The start of my openpyxl learning journey. The first thing I did was make sure to download
-the openpyxl module. I did this through pycharm, so I believe it is in the virtual environment.
-Next, I will be working through the openpyxl tutorial from the .io readthe docs webpage."""
-from openpyxl import Workbook
+import openpyxl
+import os
+import random
 
-# Here we will create the workbook class (Technically, wb is an instance of the Workbook class)
-# The workbook class uses () because there are no needed input parameters
-wb = Workbook()
+desktop_location = "C:/Users/jyuill/Desktop/"
+file_name = "jasonwb.xlsx"
+final_name = os.path.join(desktop_location, file_name)
 
-# when a workbook is created, it is alwasys made with at least one worksheet. Lets acces it!:
-ws = wb.active
+wb = openpyxl.workbook.Workbook()  # this will make a workbook AND a worksheet
+wb.remove(wb.active)
 
-# great! now lets make another worksheet! (very easy)
-ws2 = wb.create_sheet("mynewsheet")
+tabcolors = ["ff80ed", "065535", "133337", "ffffff"]
+worksheetnames = ["first", "second", "third", "fourth"]
 
-# what if we don't like the name of a worksheet? well just change it!
-ws.title = "new title"
+if len(tabcolors) != len(worksheetnames):
+    raise Exception("lens do not match")
+
+counter = 0
+for name in worksheetnames:
+    wb.create_sheet(name)
+    wb[name].sheet_properties.tabColor = tabcolors[counter]
+    counter += 1
+
+
+
+
+
+
+
+
+wb.save(final_name)
